@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "import/no-unresolved": "warning",
+    "no-param-reassign": "off",
+    "radix": "off",
+  },
+  "globals": {
+    "it": false,
+    "jest": false,
+    "document": false,
+    "describe": false,
+    "expect": false,
+    "window": false,
+    "beforeEach": false,
+    "afterEach": false,
+    "beforeAll": false,
+    "afterAll": false,
+    "Event": false,
+    "__ENV__": false
+  }
+}
