@@ -1,4 +1,4 @@
-import checkSO from '../src/checkSO';
+import checkSO from 'app/utils/checkSO';
 
 describe('check so', () => {
   it('should not throw if platform is win32', () => {
