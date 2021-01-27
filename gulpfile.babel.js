@@ -1,6 +1,10 @@
-function defaultTask(cb) {
-  // place code for your default task here
-  cb();
-}
+const gulp = require('gulp');
+const babel = require('gulp-babel');
 
-exports.default = defaultTask
+gulp.task('default', () =>
+	gulp.src('src/**/*.js')
+		.pipe(babel({
+			plugins: ['@babel/transform-runtime']
+		}))
+		.pipe(gulp.dest('dist'))
+);

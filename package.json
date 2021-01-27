@@ -4,19 +4,23 @@
   "description": "xcontrol-host",
   "main": "index.js",
   "scripts": {
+    "task": "gulp --task",
     "build": "gulp",
+    "start":"gulp; node dist/index.js",
     "test": "jest"
   },
   "author": "manellon",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2",
     "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/register": "^7.12.10",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.2",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "jest": "^26.6.3"
   },
   "dependencies": {
