@@ -2,8 +2,7 @@
   "extends": "airbnb-base",
   "rules": {
     "import/no-unresolved": "warning",
-    "no-param-reassign": "off",
-    "radix": "off",
+    "no-param-reassign": "off"
   },
   "globals": {
     "it": false,

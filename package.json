@@ -6,6 +6,7 @@
   "scripts": {
     "tasks": "gulp --tasks",
     "build": "gulp build",
+    "watch": "gulp watch",
     "clean": "gulp clean",
     "start": "gulp clean; gulp build; node dist/index.js",
     "test": "jest"
