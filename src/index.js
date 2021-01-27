@@ -1,7 +1,5 @@
-import startServer from './server/server';
+import { startServer } from './server';
 
-const initializeControl = () => {
-  console.log('initialize control application');
 
-  startServer();
-};
+console.log('initialize control application');
+startServer();
