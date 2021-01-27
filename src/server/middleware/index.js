@@ -12,7 +12,7 @@ const wrapHandler = (path, cb) =>
 
 const notFoundHandler = (req, res) => {
  res.writeHead(404, { 'Content-Type': 'application/json' });
- res.write({ message: 'path not found' });
+ res.write(JSON.stringify({ message: 'path not found' }));
  res.end();    
 }
 
