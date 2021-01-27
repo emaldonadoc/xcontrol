@@ -1,5 +1,5 @@
 const gulp = require('gulp');
-var clean = require('gulp-clean');
+const clean = require('gulp-clean');
 const babel = require('gulp-babel');
 
 gulp.task('clean', () => 
