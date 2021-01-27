@@ -1,5 +1,7 @@
-import checkSO from './utils/checkSO';
+import startServer from './server/server';
 
-export default initializeControl = () => {
+const initializeControl = () => {
   console.log('initialize control application');
+
+  startServer();
 };
