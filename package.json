@@ -4,9 +4,11 @@
   "description": "xcontrol-host",
   "main": "index.js",
   "scripts": {
-    "task": "gulp --task",
-    "build": "gulp",
-    "start": "gulp; node dist/index.js",
+    "tasks": "gulp --tasks",
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "clean": "gulp clean",
+    "start": "gulp clean; gulp build; node dist/index.js",
     "test": "jest"
   },
   "author": "manellon",

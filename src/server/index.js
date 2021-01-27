@@ -1,12 +1,30 @@
-var http = require('http');
+import http from 'http';
+import middleware  from './middleware'
 
-const hostname = '127.0.0.1';
-const port =  6660
+const handler1 = (req, res) => {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.write(JSON.stringify({message: 'hello word'}));
+    res.end();  
+}
 
-export const startServer = () => {
-  const server = http.createServer();
+const handler2 = (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'application/json' });
+  res.write(JSON.stringify({message: 'aca andamos path'}));
+  res.end();  
+}
 
-  server.listen(port, hostname, () => {
-    console.log(`Server running at http://${hostname}:${port}/`);
+const paths = middleware
+  .registerController('/', handler1)
+  .registerController('/hello', handler2)
+  .build();
+
+const server = http.createServer(paths)
+
+const port = 6660;
+const host = 'localhost'
+
+export const startServer = () =>{
+  server.listen(port, host,() => {
+    console.log(`Server running at  http://${host}:${port}`);
   });
 }
