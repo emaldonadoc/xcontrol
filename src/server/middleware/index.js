@@ -41,7 +41,6 @@ const Middleware = () => ({
   },
 
   registerController: ({ path, handler }) => {
-    console.log('registering', path);
     controllers.push(wrapHandler(path, handler));
   }
 });
