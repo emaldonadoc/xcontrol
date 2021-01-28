@@ -1,5 +1,4 @@
 import http from 'http';
-import controllers from 'app/controllers';
 import middleware from 'app/server/middleware';
 
 import { startServer } from 'app/server'
