@@ -1,10 +1,10 @@
 
 const controllers = [];
 
-const wrapHandler = (path, cb) =>
+const wrapHandler = (path, handler) =>
   (req, res, next) => {
     if (req.url === path) {
-      cb(req, res);
+      handler(req, res);
     } else {
       next();
     }
