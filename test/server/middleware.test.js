@@ -20,7 +20,7 @@ describe('Middleware', () => {
     jest.clearAllMocks();
   });
 
-  it('should register and compose controllers', () => {
+  it('should register controller', () => {
     expect(() => middleware.registerController(mockControllers.default)).not.toThrow(Error);
   });
 
