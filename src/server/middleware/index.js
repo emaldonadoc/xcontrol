@@ -1,53 +1,30 @@
 
-const controllers = [];
-
-const wrapHandler = (path, cb) => 
-(req, res, next) => {
-   if (req.url === path) {
-     cb(req, res);
-   } else {
-     next();
-   }
-};
+const controllers = {};
 
 const notFoundHandler = (req, res) => {
- res.writeHead(404, { 'Content-Type': 'application/json' });
- res.write(JSON.stringify({ message: 'path not found' }));
- res.end();    
+  res.writeHead(404, { 'Content-Type': 'application/json' });
+  res.write(JSON.stringify({ message: 'path not found' }));
+  res.end();
 }
 
-const compose = (registerPaths) => 
-  (req, res) => {   
-   let next = () => {
-       notFoundHandler.call(this, req, res);
-   };
-
-   let i = registerPaths.length;
-   while (i--) {
-     let thisMiddleware = registerPaths[i];
-     let nextMiddleware = next;
-     next = () => { 
-       thisMiddleware.call(this, req, res, nextMiddleware);
-     }
-   }
-   return next();
- }
+const compose = (registerPaths) =>
+  (req, res) => {
+    if (registerPaths[req.url]) {
+      return registerPaths[req.url].call(this, req, res);
+    }
+    return notFoundHandler.call(this, req, res);
+  }
 
 
-const Middleware = () => ({  
-
+const Middleware = () => ({
   build: () => {
     return compose(controllers);
   },
 
-  registerController: (path, handler) => {
-    controllers.push(wrapHandler(path, handler));
-    return middlewareInstance;
+  registerController: ({ path, handler }) => {
+    controllers[path] = handler;
   }
 });
 
-const middlewareInstance = Middleware();
+export default Middleware();
 
-
-export default middlewareInstance;  
-  
