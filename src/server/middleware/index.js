@@ -1,14 +1,5 @@
 
-const controllers = [];
-
-const wrapHandler = (path, handler) =>
-  (req, res, next) => {
-    if (req.url === path) {
-      handler(req, res);
-    } else {
-      next();
-    }
-  };
+const controllers = {};
 
 const notFoundHandler = (req, res) => {
   res.writeHead(404, { 'Content-Type': 'application/json' });
@@ -18,30 +9,20 @@ const notFoundHandler = (req, res) => {
 
 const compose = (registerPaths) =>
   (req, res) => {
-    let next = () => {
-      notFoundHandler.call(this, req, res);
-    };
-
-    let i = registerPaths.length;
-    while (i--) {
-      let thisMiddleware = registerPaths[i];
-      let nextMiddleware = next;
-      next = () => {
-        thisMiddleware.call(this, req, res, nextMiddleware);
-      }
+    if (registerPaths[req.url]) {
+      return registerPaths[req.url].call(this, req, res);
     }
-    return next();
+    return notFoundHandler.call(this, req, res);
   }
 
 
 const Middleware = () => ({
-
   build: () => {
     return compose(controllers);
   },
 
   registerController: ({ path, handler }) => {
-    controllers.push(wrapHandler(path, handler));
+    controllers[path] = handler;
   }
 });
 
