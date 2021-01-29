@@ -2,8 +2,14 @@ import middleware from 'app/server/middleware';
 
 describe('Middleware', () => {
 
+  const mockHandler = (req, res) => {
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.write(JSON.stringify({ message: 'hello word' }));
+    res.end();
+  };
+
   const mockControllers = {
-    default: { path: '/', handler: jest.fn() },
+    default: { path: '/', handler: jest.fn(mockHandler) },
   };
 
   const req = {
@@ -30,6 +36,9 @@ describe('Middleware', () => {
 
     composed(req, res);
     expect(mockControllers.default.handler).toHaveBeenCalled();
+    expect(res.writeHead).toHaveBeenCalledWith(200, { 'Content-Type': 'application/json' });
+    expect(res.write).toHaveBeenCalledWith("{\"message\":\"hello word\"}");
+    expect(res.end).toHaveBeenCalled();
   });
 
   it('should call not found handler', () => {
