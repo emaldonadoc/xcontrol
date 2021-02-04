@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tasks": "gulp --tasks",
-    "client": "node dist/socket/client-socket.js",
+    "client": "node dist/server/socket/client-socket.js",
     "build": "gulp build",
     "watch": "gulp watch",
     "clean": "gulp clean",

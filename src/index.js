@@ -1,5 +1,5 @@
 import { startServer } from './server';
-import { initializeSocket } from './socket';
+import { initializeSocket } from './server/socket';
 
 
 console.log('initialize control application');
