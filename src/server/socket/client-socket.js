@@ -9,7 +9,7 @@ const initializeClient = () => {
 
   socket.on('connect', () => {
     console.log('connected');
-  }, console.error);
+  });
 
   socket.on('counting', (count) => {
     console.log('counting - ' + count);
