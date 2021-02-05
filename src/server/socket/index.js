@@ -3,12 +3,15 @@ import io from 'socket.io';
 export const initializeSocket = (http) => {
   const socket = io(http);
 
-  socket.of('/ws').on('connection', (socket) => {
+  const ws = socket.of('/ws')
+
+  ws.on('connection', (connect) => {
     console.log('connected');
-    let counter = 0;
-    setInterval(() => {
-      socket.emit('counting', ++counter);
-    }, 1000);
+    connect.on('message', (msg, cb) => {
+      console.log('receiving message:', msg);
+      cb('here we go to back');
+    })
   });
+
 }
 
