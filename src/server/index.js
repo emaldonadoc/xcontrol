@@ -1,4 +1,5 @@
 import http from 'http';
+import { initializeSocket } from './socket';
 import middleware from './middleware'
 import controllers from '../controllers';
 
@@ -14,8 +15,10 @@ const registerControllers = () => {
 }
 
 export const startServer = () => {
-  registerControllers()
-    .listen(port, host, () => {
-      console.log(`Server running at  http://${host}:${port}`);
-    });
+  const server = registerControllers()
+  initializeSocket(server);
+  server.listen(port, host, () => {
+    console.log(`Server running at  http://${host}:${port}`);
+  });
+
 }
