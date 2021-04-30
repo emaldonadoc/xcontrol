@@ -4,7 +4,7 @@ import middleware from './middleware'
 import controllers from '../controllers';
 
 const port = 6660;
-const host = 'localhost'
+const host = '0.0.0.0'
 
 const registerControllers = () => {
   for (let name in controllers) {
