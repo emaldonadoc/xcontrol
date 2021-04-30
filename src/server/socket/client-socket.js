@@ -1,6 +1,6 @@
 import io from "socket.io-client";
 
-const socketUrl = 'http://localhost:6660/ws';
+const socketUrl = 'http://192.168.0.24:6660/ws';
 
 const socketPromised = () => new Promise((resolve, reject) => {
   const client = io.connect(socketUrl, {
