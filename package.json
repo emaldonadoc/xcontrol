@@ -9,7 +9,7 @@
     "build": "gulp build",
     "watch": "gulp watch",
     "clean": "gulp clean",
-    "start": "gulp build; node dist/index.js",
+    "start": "gulp build && node dist/index.js",
     "test": "jest",
     "coverage": "jest --coverage"
   },
