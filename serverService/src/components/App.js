@@ -1,10 +1,10 @@
 import React from 'react';
-
+import ActiveHostList from './ActiveHostList.js'
 
 export default () => {
   return (
     <div>
-      here is react-app
+      <ActiveHostList></ActiveHostList>
     </div>
   );
 };
