@@ -1,7 +1,7 @@
 import { lock } from '../utils/SOUtils';
 
 export const config = {
-  path: '/status',
+  path: '/lock',
   handler: (req, res) => {
     lock();
     res.writeHead(204);
