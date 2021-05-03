@@ -33,8 +33,12 @@
     "lock-your-windows": "0.0.0",
     "node-cmd": "^4.0.0",
     "node-config-manager": "^2.1.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "restify": "^8.5.1",
-    "socket.io": "^3.1.0"
+    "socket.io": "^3.1.0",
+    "webpack": "^5.36.2",
+    "webpack-server": "^0.1.2"
   },
   "jest": {
     "rootDir": "./",
