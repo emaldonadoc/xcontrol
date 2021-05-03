@@ -4,7 +4,7 @@
   "description": "xcontrol-host",
   "main": "index.js",
   "scripts": {
-    "start": "webpack",
+    "start": "webpack serve",
     "test": "jest",
     "coverage": "jest --coverage"
   },

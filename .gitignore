@@ -1,6 +1,6 @@
 #folders
 **/node_modules/
-**/dist/
+hostService/dist/
 **/coverage/
 
 #files
