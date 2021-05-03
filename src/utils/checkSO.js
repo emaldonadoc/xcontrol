@@ -1,4 +1,4 @@
-const { exec } = require('child_process');
+const cmd = require('node-cmd');
 
 export const isWin = (platform) => {
     if (platform !== 'win32') {
@@ -7,7 +7,6 @@ export const isWin = (platform) => {
 }
 
 export const isLock = () => {
-    exec('tasklist | find "LogonUI.exe"', (error, stdout, stderr) => {
-        console.log({ stdout, stderr, error })
-    })
+    const resultTask = cmd.runSync('tasklist | find "LogonUI.exe"')
+    console.log({ resultTask });
 }
