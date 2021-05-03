@@ -1,4 +1,5 @@
 export default {
   default: require('./default'),
-  status: require('./status')
+  status: require('./status'),
+  lock: require('./lock')
 };

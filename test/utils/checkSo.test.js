@@ -1,4 +1,4 @@
-import { isWin, isLock } from 'app/utils/checkSO';
+import { isWin, isLock, lock } from 'app/utils/SOUtils';
 import cmd from 'node-cmd';
 
 jest.mock('node-cmd');
