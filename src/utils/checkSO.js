@@ -8,5 +8,7 @@ export const isWin = (platform) => {
 
 export const isLock = () => {
     const resultTask = cmd.runSync('tasklist | find "LogonUI.exe"')
-    console.log({ resultTask });
+    console.log({ data: resultTask.data });
+
+    return !!resultTask.data;
 }
