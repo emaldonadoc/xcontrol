@@ -30,6 +30,7 @@
     "socket.io-client": "^3.1.1"
   },
   "dependencies": {
+    "child_process": "^1.0.2",
     "lock-your-windows": "0.0.0",
     "node-config-manager": "^2.1.2",
     "restify": "^8.5.1",
