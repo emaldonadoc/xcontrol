@@ -6,7 +6,7 @@ export default () => {
 
 
   const [activeHostList, setActiveHostList] = useState([]);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     fetchListActiveHost()
