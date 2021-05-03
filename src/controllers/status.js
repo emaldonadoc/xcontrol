@@ -1,4 +1,4 @@
-import { isLock } from '../utils/checkSO';
+import { isLock } from '../utils/SOUtils';
 
 
 export const config = {
