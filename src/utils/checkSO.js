@@ -1,4 +1,4 @@
-const cmd = require('node-cmd');
+import cmd from 'node-cmd';
 
 export const isWin = (platform) => {
     if (platform !== 'win32') {
@@ -7,8 +7,6 @@ export const isWin = (platform) => {
 }
 
 export const isLock = () => {
-    const resultTask = cmd.runSync('tasklist | find "LogonUI.exe"')
-    console.log({ data: resultTask.data });
-
+    const resultTask = cmd.runSync('tasklist | find "LogonUI.exe"');
     return !!resultTask.data;
 }
