@@ -1,0 +1,7 @@
+.active-host-wrapper {
+  width: 100px;
+  height: auto;
+  background-color: grey;
+}
+
+.active-host-wrapper .host {}

@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const port = process.env.PORT || 3000;
 
@@ -26,17 +27,8 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localsConvention: 'camelCase',
-              sourceMap: true
-            }
-          }
+          MiniCssExtractPlugin.loader, // instead of style-loader
+          'css-loader'
         ]
       }
     ]
@@ -44,7 +36,8 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './dist/index.html',
-    })
+    }),
+    new MiniCssExtractPlugin()
   ],
 
 };
