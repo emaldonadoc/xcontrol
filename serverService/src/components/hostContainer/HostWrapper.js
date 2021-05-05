@@ -32,7 +32,7 @@ const ActiveHost = () => {
   }, [isLoading]);
 
 
-  const ActiveHost = () => {
+  const hostList = () => {
     if (activeHostList.length > 0) {
       return activeHostList.map((item, i) => {
         return (
@@ -45,7 +45,7 @@ const ActiveHost = () => {
 
   return (
     <div className='active-host-wrapper'>
-      <ActiveHost />
+      {hostList()}
     </div>
   );
 
