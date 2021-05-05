@@ -1,7 +1,9 @@
 .active-host-wrapper {
-  width: 100px;
+  width: 350px;
   height: auto;
   background-color: grey;
 }
 
-.active-host-wrapper .host {}
+.active-host-wrapper .host {
+  font: bold;
+}

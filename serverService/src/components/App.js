@@ -1,10 +1,10 @@
 import React from 'react';
-import ActiveHostList from './ActiveHostList.js'
+import HostWrapper from './hostContainer/HostWrapper'
 
 export default () => {
   return (
     <div>
-      <ActiveHostList></ActiveHostList>
+      <HostWrapper></HostWrapper>
     </div>
   );
 };
