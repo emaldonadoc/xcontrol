@@ -1,9 +1,44 @@
-.active-host-wrapper {
-  width: 350px;
+.host-list {
+  position: absolute;
+  min-height: 70%;
   height: auto;
-  background-color: grey;
+  width: 96%;
+  padding-left: 67px;
+}
+
+.wrapper-title span {
+  font-size: 15px;
 }
 
 .active-host-wrapper .host {
-  font: bold;
+  padding: 0 10px;
+  position: absolute;
+  width: 400px;
+}
+
+.arrow-item {
+  width: 100px;
+  padding: 10px 0px;
+}
+
+p.arrow-item {
+  float: left !important;
+}
+
+.header-layout {
+  color: #fff;
+  background: #7dbcea;
+}
+
+.content-layout {
+  padding: '0 50px';
+  margin-top: 64;
+  min-height: 88vh;
+}
+
+.footer-layout {
+  height: 10px;
+  font-size: 12px;
+  text-align: center;
+  flex-shrink: 0;
 }

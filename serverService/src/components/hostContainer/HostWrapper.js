@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { PageHeader } from 'antd';
 import { fetchListActiveHost } from '../../utils/clientHost';
 
 
@@ -11,8 +12,8 @@ const HostElement = (props) => {
 
   return (
     <div className='host' >
-      <p>{props.item}</p>
-      <button onClick={handleActiveButton}>activate</button>
+      <p className='arrow-item'>{props.item}</p>
+      <button className='arrow-item' onClick={handleActiveButton}>activate</button>
     </div>
   );
 }
@@ -44,8 +45,8 @@ const ActiveHost = () => {
   }
 
   return (
-    <div className='active-host-wrapper'>
-      {hostList()}
+    <div className='host-list'>
+      { hostList()}
     </div>
   );
 
@@ -53,11 +54,9 @@ const ActiveHost = () => {
 
 export default () => {
   return (
-    <div>
-      <div>Active Hosts</div>
-      <div className='active-host-wrapper'>
-        <ActiveHost />
-      </div>
+    <div className='active-host-wrapper'>
+      <PageHeader className='wrapper-title' title="Active" />
+      <ActiveHost />
     </div>
   );
 }
