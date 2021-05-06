@@ -2,6 +2,8 @@
 **/node_modules/
 hostService/dist/
 **/coverage/
+**/dist/*.js
+**/dist/*.css
 
 #files
 **/package-lock.json
