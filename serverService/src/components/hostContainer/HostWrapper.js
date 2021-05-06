@@ -20,17 +20,19 @@ const HostElement = (props) => {
 
 const ActiveHost = () => {
   const [activeHostList, setActiveHostList] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const [isLoaded, setLoaded] = useState(false);
 
   useEffect(() => {
+    setLoaded(true);
     fetchListActiveHost()
       .then((list) => {
         setActiveHostList(list)
       });
+
     return () => {
-      setLoading(false)
+      setLoaded(false)
     };
-  }, [isLoading]);
+  }, [isLoaded]);
 
 
   const hostList = () => {
